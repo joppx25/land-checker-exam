@@ -48,7 +48,7 @@ async function execute (force, verbose) {
         const scraper = new Crawler(force, logger);
         await scraper.execute();
 
-        logger.info('> Done scraping for goat');
+        logger.info('> Done scraping');
         process.exit();
     } catch (err) {
         logger.error(err.toString());
