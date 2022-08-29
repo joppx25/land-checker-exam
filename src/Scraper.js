@@ -42,6 +42,8 @@ module.exports = class Scrapper {
         this.logger.info(`> Going to ${TARGET}`);
         await this.page.goto(TARGET);
         await this.page.waitFor(DEFAULT_TIMEOUT);
+
+        this.logger.info('> Preparing data...');
         
         // get number of pages here
         await this.page.click('tr.pagerRow');
@@ -98,6 +100,7 @@ module.exports = class Scrapper {
         
         const jsonResult = JSON.stringify(result);
         if (!fs.existsSync(process.env.DATA_PATH)) {
+            this.logger.info('> Saving data to data/result.json');
             fs.mkdirSync(process.env.DATA_PATH);
             fs.writeFileSync(`${process.env.DATA_PATH}/result.json`, jsonResult);
         }
