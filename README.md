@@ -1,6 +1,8 @@
 
 # Land Checker Exam
 
+![code gif](https://github.com/joppx25/land-checker-exam/code.gif)
+
 ### Note
  You can toggle the `BROWSER_NO_HEADLESS` variable inside env file to show the browser for realtime scraping or make it headless to run the scraper in headless mode(will not launch a chromium instance).
 
